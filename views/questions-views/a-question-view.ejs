@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+    <div id="question" class="row">
+      <p>CATEGORY: <%= oneQ.category %></p>
+      <p>SUBCATEGORY: <%= oneQ.subcategory %></p>
+      <h3>QUESTION:  <%=oneQ.question%></h3>
+    </div>
+
+    <div id="answers" class="row">
+      <p>Answer/s: </p>
+      <% oneQ.answers.forEach((oneAns)=>{ %>
+          <li><%=oneAns%></li>
+      <% }) %>
+    </div>
+
+    <div id="show-answer" class="row centered">
+      <button class="show-answer bttn-unite bttn-lg bttn-primary">Show Answer</button>
+    </div>
+
+    <div id="right-wrong-buttons" class="row">
+      <form class="col-sm-6 centered" action="/question/<%=counter + 1%>" method="get">
+        <button class="bttn-unite bttn-md bttn-success">I got it right!</button>
+      </form>
+
+      <form class="col-sm-6 centered"  action="/question/<%=counter + 1%>" method="post">
+        <button class="bttn-unite bttn-md bttn-danger">I got it wrong</button>
+      </form>
+    </div>
+
+  </div>
+  <div class="col-sm-1"></div>
+</div>

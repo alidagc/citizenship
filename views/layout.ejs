@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,700|Source+Sans+Pro:300,700" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/bttn.min.css">
+    <link rel="stylesheet" href="/stylesheets/styles.min.css">
+  </head>
+
+  <body class="container-fluid <%=pageName%>">
+    <header class="container-fluid home">
+      <nav class="row">
+        <a class="col-sm-3 index-link" href="/">★★★</a>
+        <a class="col-sm-2 study-link" href="/question/0">STUDY</a>
+        <a class="col-sm-2 weak-link" href="/weakQuestion">WEAK QUESTIONS</a>
+        <a class="col-sm-2 checklist-link" href="/checklist">MY CHECKLIST</a>
+        <span class="col-sm-3"></span>
+      </nav>
+    </header>
+
+  <section id="cotent-wrapper" class="container">
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8 container ejs-wrapper">
+        <%- body %>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+  </section>
+
+  <footer class="container">
+    <div class="row"></div>
+  </footer>
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="/javascripts/front.js"></script>
+
+  </script>
+  </body>
+
+</html>
