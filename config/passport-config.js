@@ -78,8 +78,8 @@ passport.use(new LocalStategy(
 
 passport.use(new GoogleStrategy(
   {   //1st argument -> settings object. The keys NEED to have that name
-    clientID: myGoogleId,
-    clientSecret: myGoogleSecret,
+    clientID: process.env.myGoogleId,
+    clientSecret: process.env.myGoogleSecret,
     callbackURL: '/auth/google/callback'
   },
   (accessToken, refreshToken, profile, next) => { // 2nd argument -> callback
@@ -122,8 +122,8 @@ passport.use(new GoogleStrategy(
 
 passport.use(new FbStrategy(
   {   //1st argument -> settings object. The keys NEED to have that name
-    clientID: '283272945474600',
-    clientSecret:'73febbefac510ba5e5f0b44cbed4ed83',
+    clientID: process.env.myFacebookId,
+    clientSecret: process.env.myFacebookSecret,
     callbackURL: '/auth/facebook/callback'
   },
   (accessToken, refreshToken, profile, next) => { // 2nd argument -> callback
@@ -157,15 +157,3 @@ passport.use(new FbStrategy(
     );
   }
 ));
-
-
-// THESE ARE ONLY FOR DEVELOPMENT
-
-//FACEBOOK
-// https://developers.facebook.com/apps/283272945474600/dashboard/
-// Apple ID 283272945474600
-// Apple Secret 73febbefac510ba5e5f0b44cbed4ed83
-
-//GOOGLE
-// ID: 964206070183-uvmjqvk9gt81hnkuq70dpp0878370bg1.apps.googleusercontent.com
-// Client Secret: sEfzN8GF1o8kz-Tk99FUxMlr
