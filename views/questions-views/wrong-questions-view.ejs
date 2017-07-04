@@ -1,27 +1,22 @@
 
-<div class="row">
-  <div class="col-sm-12">
-    <% wrongArray.forEach((oneQ)=>{ %>
-      <div class="row">
-        <div class="col-sm-8">
-          <h3>QUESTION: </h3>
-          <p><%=oneQ.question%></p>
-          <div class="checklist-answers">
-            <%oneQ.answers.forEach((oneAns)=>{ %>
-              <p>☆ <%=oneAns%></p>
-            <%})%>
+<% if (wrongArray.length === 0){ %>
+  <p>You are killing it! No questions you need to review</p>
+<% } else { %>
+  <div class="row">
+    <div class="col-sm-12">
+      <% wrongArray.forEach((oneQ)=>{ %>
+        <div class="row">
+          <div class="col-sm-9">
+            <h3>QUESTION: </h3>
+            <p><%=oneQ.question%></p>
+          </div>
+          <div class="col-sm-3 centered">
+            <button class="bttn-unite bttn-sm bttn-primary">
+              <a href="/weakQuestions/<%=oneQ._id%>">See answer</a>
+            </button>
           </div>
         </div>
-
-        <div class="col-sm-4">
-          <div class="col-sm-6 centered"><button class="show-answer-checklist bttn-unite bttn-xs bttn-primary">Show Answer</button></div>
-          <div class="col-sm-6">
-            <form class="col-sm-6 centered" action="/weakQuestions" method="get">
-                <button class="bttn-unite bttn-xs bttn-success">Remove Question</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    <% }) %>
+      <% }) %>
+    </div>
   </div>
-</div>
+<% } %>

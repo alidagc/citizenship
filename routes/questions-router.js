@@ -19,7 +19,7 @@ router.get('/question/0',(req, res, next) => {
 
   res.locals.oneQ = QfromArray;
   res.locals.counter = counter + 1;
-  res.render('questions-views/a-question-view');
+  res.render('questions-views/study-question-view');
 });
 });
 
@@ -51,13 +51,13 @@ res.locals.pageName = "study";
 
               res.locals.oneQ = theActualQuestion;
               res.locals.counter = counter + 1;
-              res.render('questions-views/a-question-view');
+              res.render('questions-views/study-question-view');
             });
       }
       else {
         res.locals.oneQ = theActualQuestion;
         res.locals.counter = counter + 1;
-        res.render('questions-views/a-question-view');
+        res.render('questions-views/study-question-view');
       }
   });
 });
@@ -82,21 +82,33 @@ router.get('/weakQuestions',(req, res, next) => {
 });
 
 //When specific question in list of weak questions is clicked
+// oneQ
+router.get('/weakQuestions/:QId', (req, res, next) => {
+  QuestionModel.findById(
+  req.params.QId,       //1st arguemnt is the id to find in the db
+  (err, theWeakQuestion) => { // 2nd argument -> callback
+    if (err) {
+      next(err);
+      return;
+    }
+      res.locals.theWeakQuestion = theWeakQuestion;
+      res.render('questions-views/one-weak-question');
+  });
+});
 
 // When "REMOVE WEAK QUESTION" IS CLICKED
-router.post('/weakQuestions/:Qid', (req, res, next) => {
-  UserModel.findByIdAndRemove(req.params._id, (err, response) => {
+router.post('/weakQuestions/:QId/remove', (req, res, next) => {
+  UserModel.findByIdAndUpdate(req.user._id,
+    {"$pull" : {weakQuestions: req.params.QId},
+    },(err, question) => {
         if (err){
-          console.log("Question not removed to user");
+          console.log("=======================Question not removed to user");
           next(err);
           return;
         }
-        res.redirect('questions-views/wrong-questions-view');
-      });
+        res.redirect('/weakQuestions');
+  });
 });
-
-
-
 
 
 
