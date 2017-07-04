@@ -58,8 +58,8 @@ app.use('/', index);
 const myQuestionsRoutes = require('./routes/questions-router.js');
 app.use('/', myQuestionsRoutes);
 
-// const myAuthRoutes = require('./routes/auth-router.js');
-// app.use('/', myAuthRoutes);
+const myAuthRoutes = require('./routes/auth-router.js');
+app.use('/', myAuthRoutes);
 
 //END ROUTES ------------------------------------------------------
 // catch 404 and forward to error handler

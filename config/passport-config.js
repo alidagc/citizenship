@@ -38,13 +38,13 @@ const LocalStategy = require('passport-local').Strategy;
 
 passport.use(new LocalStategy(
   {   // 1st argument  -> settings object, the key values are always the same
-    usernameField: 'loginUsername', // these are the names in the login form
+    usernameField: 'loginEmail', // these are the names in the login form
     passwordField: 'loginPassword' // these will be replacing the formUsername and formPassword variables below
   },
   (formUsername, formPassword, next) =>{ // 2nd argument  -> callback (will be called when a user tries to login)
 // 1st thing to consider: Is there an account in the database with the provided username?
   UserModel.findOne(
-    {username: formUsername },
+    {email: formUsername },
     (err, userFromDB) =>{
       if(err) {
         next(err);
@@ -58,7 +58,7 @@ passport.use(new LocalStategy(
       }
 
       //2nd: If there is a user with that username, is the PASSWORD correct?
-      if (bcrypt.compareSync(formUsername, userFromDB.encryptedPassword) === false){
+      if (bcrypt.compareSync(formPassword, userFromDB.encryptedPassword) === false){
       // This is comparing the encripted password that was just entered
       // vs the encripted password from the database
       // in Passport, if you call next with "false",

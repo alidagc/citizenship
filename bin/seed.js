@@ -947,6 +947,5 @@ Question.create(
   }
 );
 
-
 //If you are 65 years old or older and have been a legal permanent resident of the United States for 20 or more years, you
 //may study just the questions that have been marked with an asterisk.

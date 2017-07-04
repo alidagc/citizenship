@@ -1,0 +1,25 @@
+
+<div class="row">
+  <form class="col-sm-12 centered" action="/checklist" method="post">
+      <button class="bttn-unite bttn-lg bttn-success">Add item to my checklist!</button>
+  </form>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <% checklistArray.forEach((oneListItem)=>{ %>
+      <div class="row">
+        <div class="col-sm-8">
+          <p><%=oneListItem%></p>
+        </div>
+        <div class="col-sm-4">
+          <div class="col-sm-6 centered"><button class="bttn-unite bttn-xs bttn-primary">Edit item</button></div>
+          <div class="col-sm-6">
+            <form class="col-sm-6 centered" action="/weakQuestions" method="get">
+                <button class="bttn-unite bttn-xs bttn-success">Remove item</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>

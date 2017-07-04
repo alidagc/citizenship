@@ -1,0 +1,50 @@
+<h2>Sign up</h2>
+
+<% if (typeof errorMessageSignup === "string"){ %>
+  <p class="error-message"><%=errorMessageSignup%></p>
+<% } %>
+
+<form id="form" action="/signup" method="post">
+
+  <label for="firstname-input">First Name</label>
+  <input id="firstname-input" type="text" name="userFirstname"
+            placeholder="Darth">
+  <br>
+  <br>
+  <label for="lastname-input">Last Name</label>
+  <input id="lastname-input" type="text" name="userLastname"
+            placeholder="Darth Vader">
+  <br>
+  <br>
+  <label for="state-input">In what state are you taking the test?</label>
+  <input id="state-input" type="text" name="userState"
+            placeholder="New York">
+  <br>
+  <br>
+  <label for="apptDate-input">When is your interview?</label>
+  <input id="apptDate-input" type="date" name="userApptDate"
+            placeholder="08/20/2017">
+  <br>
+  <br>
+  <label for="email-input">Email</label>
+  <input id="email-input" type="email" name="userEmail"
+            placeholder="darthy666@star.wars">
+  <br>
+  <br>
+  <label for="password-input">Password</label>
+  <input id="password-input" type="password" name="userPassword"
+            placeholder="*********">
+  <br>
+  <br>
+  <label for="over65-input">Check if you are 65 years old or older and have been a legal permanent resident of the United States for 20 or more years.</label>
+  <input id="over65-input" type="radio" name="userOver65"
+            placeholder="New York">
+  <br>
+  <br>
+  <button>Create an account</button>
+</form>
+
+<br>
+<a href="/auth/facebook">Log In with Facebook</a>
+<br>
+<a href="/auth/google">Log In with Google</a>
