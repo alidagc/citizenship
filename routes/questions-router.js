@@ -23,6 +23,8 @@ router.get('/question/0',(req, res, next) => {
 });
 });
 
+
+
 // FROM BUTTONS ON STUDY PAGE "RIGHT OR WRONG" =================
 router.post('/question/:counter', (req, res, next) => {
 res.locals.pageName = "study";

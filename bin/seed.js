@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/citizenship');
+mongoose.connect(process.env.MONGODB_URI);
 
 // We have to connect the DB again here because seed.js is SEPARATE from app.js
 
