@@ -23,7 +23,7 @@ router.get('/question/0',(req, res, next) => {
 });
 });
 
-// FROM BUTTONS ON STUDY PAGE "RIGHT OR WRONG" ============================
+// FROM BUTTONS ON STUDY PAGE "RIGHT OR WRONG" =================
 router.post('/question/:counter', (req, res, next) => {
 res.locals.pageName = "study";
   const counter = Number(req.params.counter);
@@ -102,7 +102,7 @@ router.post('/weakQuestions/:QId/remove', (req, res, next) => {
     {"$pull" : {weakQuestions: req.params.QId},
     },(err, question) => {
         if (err){
-          console.log("=======================Question not removed to user");
+          console.log("Question not removed from user");
           next(err);
           return;
         }

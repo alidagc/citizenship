@@ -61,6 +61,9 @@ app.use('/', myQuestionsRoutes);
 const myAuthRoutes = require('./routes/auth-router.js');
 app.use('/', myAuthRoutes);
 
+const myChecklistRoutes = require('./routes/checklist-router.js');
+app.use('/', myChecklistRoutes);
+
 //END ROUTES ------------------------------------------------------
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

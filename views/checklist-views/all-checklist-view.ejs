@@ -1,12 +1,10 @@
 
 <div class="row">
-  <form class="col-sm-12 centered" action="/checklist" method="post">
-      <button class="bttn-unite bttn-lg bttn-success">Add item to my checklist!</button>
-  </form>
+    <button class="bttn-unite bttn-lg bttn-success"><a href="/checklist/add">Add item to my checklist!</a></button>
 </div>
 <div class="row">
   <div class="col-sm-12">
-    <% checklistArray.forEach((oneListItem)=>{ %>
+    <% usersChecklist.forEach((oneListItem)=>{ %>
       <div class="row">
         <div class="col-sm-8">
           <p><%=oneListItem%></p>

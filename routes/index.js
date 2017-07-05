@@ -9,13 +9,4 @@ router.get('/', (req, res, next) => {
 });
 
 
-// Checklist page
-router.get('/checklist',(req, res, next) => {
-  if (req.user) {
-       res.render('checklist-view');
-     } else {
-       res.render('auth-views/for-access-view');
-     }
-});
-
 module.exports = router;
