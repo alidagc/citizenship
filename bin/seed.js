@@ -812,7 +812,7 @@ const allTheQuestions = [
     timeSensitive: false
   },
   {
-    category: "American History",
+    category: "Integrated Civics",
     subcategory: "Geography",
     question: "Name one of the two longest rivers in the United States.",
     answers: ["Missouri (River)", "Mississippi (River)"],
@@ -821,7 +821,7 @@ const allTheQuestions = [
     timeSensitive: false
   },
   {
-    category: "American History",
+    category: "Integrated Civics",
     subcategory: "Geography",
     question: "What ocean is on the West Coast of the United States?",
     answers: ["Pacific (Ocean)"],
@@ -830,7 +830,7 @@ const allTheQuestions = [
     timeSensitive: false
   },
   {
-    category: "American History",
+    category: "Integrated Civics",
     subcategory: "Geography",
     question: "What ocean is on the East Coast of the United States?",
     answers: ["Atlantic (Ocean)"],
@@ -839,7 +839,7 @@ const allTheQuestions = [
     timeSensitive: false
   },
   {
-    category: "American History",
+    category: "Integrated Civics",
     subcategory: "Geography",
     question: "Name one U.S. territory",
     answers: ["Puerto Rico", "U.S. Virgin Islands", "American Samoa",
@@ -849,7 +849,7 @@ const allTheQuestions = [
     timeSensitive: false
   },
   {
-    category: "American History",
+    category: "Integrated Civics",
     subcategory: "Geography",
     question: "Name one state that borders Canada.",
     answers: ["Maine", "New Hampshire", "Vermont", "New York", "Pennsylvania",
@@ -859,7 +859,7 @@ const allTheQuestions = [
     timeSensitive: false
   },
   {
-    category: "American History",
+    category: "Integrated Civics",
     subcategory: "Geography",
     question: "Name one state that borders Mexico.",
     answers: ["California", "Arizona", "New Mexico", "Texas"],
@@ -868,7 +868,7 @@ const allTheQuestions = [
     timeSensitive: false
   },
   {
-    category: "American History",
+    category: "Integrated Civics",
     subcategory: "Geography",
     question: "What is the capital of the United States?",
     answers: ["Washington, D.C."],
@@ -877,7 +877,7 @@ const allTheQuestions = [
     timeSensitive: false
   },
   {
-    category: "American History",
+    category: "Integrated Civics",
     subcategory: "Geography",
     question: "Where is the Statue of Liberty?",
     answers: ["New York (Harbor)", "Liberty Island"],
@@ -886,7 +886,7 @@ const allTheQuestions = [
     timeSensitive: false
   },
   {
-    category: "American History",
+    category: "Integrated Civics",
     subcategory: "Symbols",
     question: "Why does the flag have 13 stripes?",
     answers: ["because there were 13 original colonies", "because the stripes represent the original colonies"],
@@ -895,7 +895,7 @@ const allTheQuestions = [
     timeSensitive: false
   },
   {
-    category: "American History",
+    category: "Integrated Civics",
     subcategory: "Symbols",
     question: "Why does the flag have 50 stars?",
     answers: ["because there is one star for each state", "because each star represents a state", "because there are 50 states"],
@@ -904,7 +904,7 @@ const allTheQuestions = [
     timeSensitive: false
   },
   {
-    category: "American History",
+    category: "Integrated Civics",
     subcategory: "Symbols",
     question: "What is the name of the national anthem?",
     answers: ["The Star-Spangled Banner"],
@@ -913,7 +913,7 @@ const allTheQuestions = [
     timeSensitive: false
   },
   {
-    category: "American History",
+    category: "Integrated Civics",
     subcategory: "Holidays",
     question: "When do we celebrate Independence Day?",
     answers: ["July 4"],
@@ -922,7 +922,7 @@ const allTheQuestions = [
     timeSensitive: false
   },
   {
-    category: "American History",
+    category: "Integrated Civics",
     subcategory: "Holidays",
     question: "Name two national U.S. holidays.",
     answers: ["New Year’s Day", "Martin Luther King, Jr. Day", "Presidents’ Day",

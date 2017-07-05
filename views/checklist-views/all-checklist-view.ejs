@@ -1,21 +1,18 @@
 
-<div class="row">
-    <button class="bttn-unite bttn-lg bttn-success"><a href="/checklist/add">Add item to my checklist!</a></button>
+<div class="row centered">
+    <button class="bttn-unite bttn-md bttn-success"><a href="/checklist/add">Add item to my checklist!</a></button>
 </div>
 <div class="row">
   <div class="col-sm-12">
-    <% usersChecklist.forEach((oneListItem)=>{ %>
+    <% checklistArray.forEach((oneListItem)=>{ %>
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-9">
           <p><%=oneListItem%></p>
         </div>
-        <div class="col-sm-4">
-          <div class="col-sm-6 centered"><button class="bttn-unite bttn-xs bttn-primary">Edit item</button></div>
-          <div class="col-sm-6">
-            <form class="col-sm-6 centered" action="/weakQuestions" method="get">
+        <div class="col-sm-3">
+            <form class="centered" action="/checklist/delete" method="get">
                 <button class="bttn-unite bttn-xs bttn-success">Remove item</button>
             </form>
-          </div>
         </div>
       </div>
     <% }) %>
