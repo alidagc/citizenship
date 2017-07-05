@@ -41,8 +41,19 @@ router.post('/checklist/add/new',(req, res, next) => {
 
 
 // TO DELETE A CHECKLIST ITEM ===========================
-router.post('/checklist/delete',(req, res, next) => {
-        res.redirect('/checklist');
+router.post('/checklist/delete/:itemIndex',(req, res, next) => {
+  console.log(req.params.itemIndex + "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+  // remove the desired checklist item
+  req.user.checklist.splice(req.params.itemIndex, 1);
+  // save the fact that it was removed
+  req.user.save((err, QsfromArray) => {
+    console.log('item removed===================================');
+    if (err) {
+      next(err);
+      return;
+    }
+  });
+  res.redirect('/checklist');
 });
 
 module.exports = router;

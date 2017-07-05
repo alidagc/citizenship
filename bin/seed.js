@@ -931,7 +931,6 @@ const allTheQuestions = [
     stateDependent: false,
     timeSensitive: false
   },
-
 ];
 
 Question.create(

@@ -11,19 +11,36 @@
 
   <body class="container-fluid">
     <header class="container-fluid">
+
       <nav class="row">
-        <a class="col-sm-3 index-link" href="/">★★★</a>
-        <a class="col-sm-2 study-link" href="/question/0">STUDY</a>
-        <a class="col-sm-2 weak-link" href="/weakQuestions">WEAK QUESTIONS</a>
-        <a class="col-sm-2 checklist-link" href="/checklist">MY CHECKLIST</a>
-        <span class="col-sm-3">
+        <a class="col-sm-1 index-link" href="/">★★★</a>
+
+        <div class="col-sm-3">
+        <div role="presentation" class="dropdown">
+          <div class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            STUDY <span class="caret"></span>
+          </div>
+          <ul class="dropdown-menu">
+            <form action="/question/category/1800s/0" method="get">
+              <span type="button" name="button"><a href="/question/category/1800s/0">1800</a></span>
+            </form>
+            <%# <li><a href="/question/category/1800s/0">1800s</a></li>%>
+          </ul>
+        </div>
+        </div>
+
+        <a class="col-sm-3 weak-link" href="/weakQuestions">WEAK QUESTIONS</a>
+        <a class="col-sm-3 checklist-link" href="/checklist">MY CHECKLIST</a>
+
+        <div class="col-sm-2">
           <% if (typeof currentUser === 'object') { %>
             <a href="/logout">Log Out</a>
           <% } else { %>
             <a href="/signup">Sign Up</a>
             <a href="/login">Log In</a>
           <% } %>
-        </span>
+        </div>
+
       </nav>
     </header>
 

@@ -19,15 +19,15 @@
     </div>
 
     <div id="right-wrong-buttons" class="row">
-      <form class="col-sm-4 centered" action="/question/<%=(counter - 2) %>" method="post">
+      <form class="col-sm-4 centered" action="/question/category/<%=subcategory%>/<%=(counter - 2) %>" method="post">
         <button class="bttn-unite bttn-md bttn-success">< Back</button>
       </form>
 
-      <form class="col-sm-4 centered" action="/question/<%=counter%>" method="post">
+      <form class="col-sm-4 centered" action="/question/category/<%= subcategory %>/<%=counter%>" method="post">
         <button class="bttn-unite bttn-md bttn-success">I got it right!</button>
       </form>
 
-      <form class="col-sm-4 centered"  action="/question/<%=counter%>" method="post">
+      <form class="col-sm-4 centered"  action="/question/category/<%= subcategory %>/<%=counter%>" method="post">
           <input type="hidden" name="failure" value="incorrect">
         <button type="submit" class="bttn-unite bttn-md bttn-danger">I got it wrong</button>
       </form>

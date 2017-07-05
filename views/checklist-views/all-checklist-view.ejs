@@ -4,13 +4,13 @@
 </div>
 <div class="row">
   <div class="col-sm-12">
-    <% checklistArray.forEach((oneListItem)=>{ %>
+    <% checklistArray.forEach((oneListItem, i)=>{ %>
       <div class="row">
         <div class="col-sm-9">
           <p><%=oneListItem%></p>
         </div>
         <div class="col-sm-3">
-            <form class="centered" action="/checklist/delete" method="get">
+            <form class="centered" action="/checklist/delete/<%= i %>" method="post">
                 <button class="bttn-unite bttn-xs bttn-success">Remove item</button>
             </form>
         </div>
