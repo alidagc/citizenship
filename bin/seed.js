@@ -721,7 +721,7 @@ const allTheQuestions = [
   },
   {
     category: "American History",
-    subcategory: " Recent American History and Other Important Historical Information",
+    subcategory: "Recent American History and Other Important Historical Information",
     question: "Name one war fought by the United States in the 1900s",
     answers: ["World War I", "World War II", "Korean War", "Vietnam War", "(Persian) Gulf War"],
     specialQuestion: true,
@@ -730,7 +730,7 @@ const allTheQuestions = [
   },
   {
     category: "American History",
-    subcategory: " Recent American History and Other Important Historical Information",
+    subcategory: "Recent American History and Other Important Historical Information",
     question: "Who was President during World War I?",
     answers: ["(Woodrow) Wilson"],
     specialQuestion: false,
@@ -739,7 +739,7 @@ const allTheQuestions = [
   },
   {
     category: "American History",
-    subcategory: " Recent American History and Other Important Historical Information",
+    subcategory: "Recent American History and Other Important Historical Information",
     question: "Who was President during the Great Depression and World War II?",
     answers: ["(Franklin) Roosevelt"],
     specialQuestion: false,
@@ -748,7 +748,7 @@ const allTheQuestions = [
   },
   {
     category: "American History",
-    subcategory: " Recent American History and Other Important Historical Information",
+    subcategory: "Recent American History and Other Important Historical Information",
     question: "Who did the United States fight in World War II?",
     answers: ["Japan, Germany, and Italy"],
     specialQuestion: false,
@@ -757,7 +757,7 @@ const allTheQuestions = [
   },
   {
     category: "American History",
-    subcategory: " Recent American History and Other Important Historical Information",
+    subcategory: "Recent American History and Other Important Historical Information",
     question: "Before he was President, Eisenhower was a general. What war was he in?",
     answers: ["World War II"],
     specialQuestion: false,
@@ -766,7 +766,7 @@ const allTheQuestions = [
   },
   {
     category: "American History",
-    subcategory: " Recent American History and Other Important Historical Information",
+    subcategory: "Recent American History and Other Important Historical Information",
     question: "During the Cold War, what was the main concern of the United States?",
     answers: ["Communism"],
     specialQuestion: false,
@@ -775,7 +775,7 @@ const allTheQuestions = [
   },
   {
     category: "American History",
-    subcategory: " Recent American History and Other Important Historical Information",
+    subcategory: "Recent American History and Other Important Historical Information",
     question: "What movement tried to end racial discrimination?",
     answers: ["civil rights (movement)"],
     specialQuestion: false,
@@ -784,7 +784,7 @@ const allTheQuestions = [
   },
   {
     category: "American History",
-    subcategory: " Recent American History and Other Important Historical Information",
+    subcategory: "Recent American History and Other Important Historical Information",
     question: "What did Martin Luther King, Jr. do?",
     answers: ["fought for civil rights", "worked for equality for all Americans"],
     specialQuestion: true,
@@ -793,7 +793,7 @@ const allTheQuestions = [
   },
   {
     category: "American History",
-    subcategory: " Recent American History and Other Important Historical Information",
+    subcategory: "Recent American History and Other Important Historical Information",
     question: "What major event happened on September 11, 2001, in the United States?",
     answers: ["Terrorists attacked the United States."],
     specialQuestion: false,
@@ -802,7 +802,7 @@ const allTheQuestions = [
   },
   {
     category: "American History",
-    subcategory: " Recent American History and Other Important Historical Information",
+    subcategory: "Recent American History and Other Important Historical Information",
     question: "Name one American Indian tribe in the United States.",
     answers: ["Cherokee", "Navajo", "Sioux", "Chippewa", "Choctaw", "Pueblo",
     "Apache", "Iroquois", "Creek", "Blackfeet", "Seminole", "Cheyenne", "Arawak",
@@ -949,3 +949,6 @@ Question.create(
 
 //If you are 65 years old or older and have been a legal permanent resident of the United States for 20 or more years, you
 //may study just the questions that have been marked with an asterisk.
+
+// How to run seed file in production:
+// heroku run node bin/seed.js
