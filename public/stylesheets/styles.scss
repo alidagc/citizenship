@@ -11,7 +11,10 @@ body {
 
 nav {
   margin: 20px 0;
-  a {
+  .dropdown-menu {
+    background-color: #567fa0;
+  }
+  .nav-text {
     font-weight: 700;
     letter-spacing: 3px;
     color: white;
@@ -20,7 +23,7 @@ nav {
     text-decoration: none;
     padding: 1%;
   }
-  a:hover {
+  .nav-text:hover {
     color: white;
     opacity: 1;
     text-decoration: none;

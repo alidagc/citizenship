@@ -15,7 +15,6 @@ router.get('/question/0',(req, res, next) => {
       next(err);
       return;
     }
-
   res.locals.oneQ = QfromArray;
   res.locals.counter = counter + 1;
   res.render('questions-views/study-question-view');

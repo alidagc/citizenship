@@ -11,6 +11,7 @@ const myQuestionSchema = new Schema ({
     timeSensitive: {type: Boolean}
   });
 
+
 const QuestionModel = mongoose.model ('Question', myQuestionSchema);
 
 module.exports = QuestionModel;

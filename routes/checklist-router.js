@@ -37,17 +37,42 @@ router.post('/checklist/add/new',(req, res, next) => {
       });
 });
 
-// TO EDIT A CHECKLIST POST =============================
+// TO VIEW EDIT CHECKLIST PAGE =============================
+router.get('/checklist/edit/:itemIndex',(req, res, next) => {
+  const currentIndex = Number(req.params.itemIndex);
+  res.locals.previousText = req.user.checklist[currentIndex];
 
+  if (req.user) {
+      res.locals.index = currentIndex;
+      res.render('checklist-views/edit-checklist-view');
+      } else {
+       res.render('auth-views/for-access-view');
+     }
+});
+
+// TO EDIT A CHECKLIST POST =============================
+router.post('/checklist/update/:itemIndex',(req, res, next) => {
+  const currentIndex = Number(req.params.itemIndex);
+  req.user.checklist[currentIndex] = req.body.editTextForChecklist;
+
+  UserModel.findByIdAndUpdate(req.user._id,
+    {$set: {checklist.currentIndex:req.body.editTextForChecklist }},
+     (err) => {
+      if (err) {
+        next(err);
+        return;
+    }
+    res.redirect('/checklist');
+  });
+});
 
 // TO DELETE A CHECKLIST ITEM ===========================
 router.post('/checklist/delete/:itemIndex',(req, res, next) => {
-  console.log(req.params.itemIndex + "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+  console.log(req.params.itemIndex);
   // remove the desired checklist item
   req.user.checklist.splice(req.params.itemIndex, 1);
   // save the fact that it was removed
   req.user.save((err, QsfromArray) => {
-    console.log('item removed===================================');
     if (err) {
       next(err);
       return;
