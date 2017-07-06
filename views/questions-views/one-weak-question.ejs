@@ -13,8 +13,11 @@
   </div>
 
   <div class="row">
-    <form class="col-sm-12 centered"  action="/weakQuestions/<%=theWeakQuestion._id%>/remove" method="post">
-      <button class="bttn-unite bttn-lg bttn-danger">Remove this question from list</button>
+    <div class="col-sm-6">
+      <a href="/weakQuestions">Go back to list</a>
+    </div>
+    <form class="col-sm-6 centered"  action="/weakQuestions/<%=theWeakQuestion._id%>/remove" method="post">
+      <button class="bttn-unite bttn-md bttn-danger">Remove this question from list</button>
     </form>
   </div>
 </div>

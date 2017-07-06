@@ -6,15 +6,32 @@ const router  = express.Router();
 //10 QUESTION PRACTICE VIEW TEST ========================
 router.get('/practicetest',(req, res, next) => {
   if (req.user) {
-    QuestionModel.findRandom({}, {}, {limit: 10},
-      (err, results)=> {
-        if (err) {
-        next(err);
-        return;
-      }
-      res.locals.practiceQuestions = results;
-      res.render('practice-test-views/practice-test-view');
-      });
+    if (req.user.practiceTest.length === 0){
+      // console.log(req.user.practiceTest.length);
+      QuestionModel.findRandom({}, {}, {limit: 10},
+        (err, results)=> {
+          if (err) {
+          next(err);
+          return;
+        }
+        // console.log(results);
+        req.user.practiceTest = results;
+        req.user.save((err, QsfromArray) => {
+          if (err) {
+            console.log("Error in saving to the user");
+            next(err);
+            return;
+          }
+        });
+        // console.log("THE NEW ARRAY" + req.user.practiceTest);
+        res.locals.practiceQuestions = req.user.practiceTest ;
+        res.render('practice-test-views/practice-test-view');
+        });
+
+        } else {
+          res.locals.practiceQuestions = req.user.practiceTest;
+          res.render('practice-test-views/practice-test-view');
+        }
     } else {
       res.render('auth-views/for-access-view');
        }
@@ -30,41 +47,21 @@ router.post('/practicetest/addweak/:QId', (req, res, next) => {
         next(err);
         return;
       }
-      return;
+      res.redirect('/practicetest');
     });
 });
 
-// //  WHEN SPECIFIC QUESTION IN TEST IS CLICKED TO SEE ANSWER ====
-// router.get('/practicetest/:QId', (req, res, next) => {
-//   QuestionModel.findById(
-//   req.params.QId,       //1st arguemnt is the id to find in the db
-//   (err, thePracticeQuestion) => { // 2nd argument -> callback
-//     if (err) {
-//       next(err);
-//       return;
-//     }
-//       res.locals.thePracticeQuestion = thePracticeQuestion;
-//       res.render('practice-test-views/one-practice-question');
-//   });
-// });
+// BUTTON TO REGENERATE 10 NEW QUESTIONS
+router.post('/practicetest/regenerate', (req, res, next) => {
+  req.user.practiceTest = [];
+  req.user.save((err, QsfromArray) => {
+    if (err) {
+      console.log("Error in saving to the user");
+      next(err);
+      return;
+    }
+  });
+  res.redirect('/practicetest');
+});
 
 module.exports = router;
-
-// <button class="bttn-unite bttn-sm bttn-primary">
-//   <a href="/practicetest/<%=oneQ._id%>">See answer</a>
-// </button>
-
-// <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
-//
-// <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-//   <div class="modal-dialog modal-sm" role="document">
-//     <div class="modal-content">
-//       <div class="row">
-//         <p>Answer/s: </p>
-//         <% thePracticeQuestion.answers.forEach((oneAns)=>{ %>
-//           <p>☆ <%=oneAns%></p>
-//         <%})%>
-//       </div>
-//     </div>
-//   </div>
-// </div>

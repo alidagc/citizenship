@@ -5,7 +5,7 @@
     <title><%= title %></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,700|Source+Sans+Pro:300,700" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/bttn.min.css">
+    <%# <link rel="stylesheet" href="/stylesheets/bttn.min.css">%>
     <link rel="stylesheet" href="/stylesheets/styles.min.css">
   </head>
 
@@ -13,46 +13,51 @@
     <header class="container-fluid">
 
       <nav class="row">
-        <a class="nav-text col-sm-1 index-link" href="/">★★★</a>
+        <div id="logo" class="col-sm-1">
+          <a class="nav-text index-link" href="/">★★★</a>
+          <a class="nav-text index-link" href="/">★★★</a>
+          <a class="nav-text index-link" href="/">★★★</a>
+        </div>
 
-        <div class="col-sm-2">
+        <div class="col-sm-3">
         <div role="presentation" class="dropdown">
           <div class="nav-text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             STUDY <span class="nav-text caret"></span>
           </div>
           <ul class="dropdown-menu centered">
+            <span type="button" name="button"><a class="nav-text" href="/question/0">ALL QUESTIONS</a></span>
             <form action="/question/category/Principles%20of%20American%20Democracy/0" method="get">
-              <span type="button" name="button"><a class="nav-text" href="/question/category/Principles%20of%20American%20Democracy/0">Principles of American Democracy</a></span>
+              <span type="button" name="button"><a class="modal-text" href="/question/category/Principles%20of%20American%20Democracy/0">Principles of American Democracy</a></span>
             </form>
             <form action="/question/category/System%20of%20Government/0" method="get">
-              <span type="button" name="button"><a class="nav-text" href="/question/category/System%20of%20Government/0">System of Government</a></span>
+              <span type="button" name="button"><a class="modal-text" href="/question/category/System%20of%20Government/0">System of Government</a></span>
             </form>
             <form action="/question/category/Rights%20and%20Responsibilitiest/0" method="get">
-              <span type="button" name="button"><a class="nav-text" href="/question/category/Rights%20and%20Responsibilitiest/0">Rights and Responsibilitiest</a></span>
+              <span type="button" name="button"><a class="modal-text" href="/question/category/Rights%20and%20Responsibilitiest/0">Rights and Responsibilitiest</a></span>
             </form>
             <form action="/question/category/Colonial%20Period%20and%20Independence/0" method="get">
-              <span type="button" name="button"><a class="nav-text" href="/question/category/Colonial%20Period%20and%20Independence/0">Colonial Period and Independence</a></span>
+              <span type="button" name="button"><a class="modal-text" href="/question/category/Colonial%20Period%20and%20Independence/0">Colonial Period and Independence</a></span>
             </form>
             <form action="/question/category/1800s/0" method="get">
-              <span type="button" name="button"><a class="nav-text" href="/question/category/1800s/0">1800</a></span>
+              <span type="button" name="button"><a class="modal-text" href="/question/category/1800s/0">1800</a></span>
             </form>
             <form action="/question/category/Recent%20American%20History%20and%20Other%20Important%20Historical%20Information/0" method="get">
-              <span type="button" name="button"><a class="nav-text" href="/question/category/Recent%20American%20History%20and%20Other%20Important%20Historical%20Information/0">Recent American History and Other Important Historical Information</a></span>
+              <span type="button" name="button"><a class="modal-text" href="/question/category/Recent%20American%20History%20and%20Other%20Important%20Historical%20Information/0">Recent American History</a></span>
             </form>
             <form action="/question/category/Geography/0" method="get">
-              <span type="button" name="button"><a class="nav-text" href="/question/category/Geography/0">Geography</a></span>
+              <span type="button" name="button"><a class="modal-text" href="/question/category/Geography/0">Geography</a></span>
             </form>
             <form action="/question/category/Symbols/0" method="get">
-              <span type="button" name="button"><a class="nav-text" href="/question/category/Symbols/0">Symbols</a></span>
+              <span type="button" name="button"><a class="modal-text" href="/question/category/Symbols/0">Symbols</a></span>
             </form>
             <form action="/question/category/Holidays/0" method="get">
-              <span type="button" name="button"><a class="nav-text" href="/question/category/Holidays/0">Holidays</a></span>
+              <span type="button" name="button"><a class="modal-text" href="/question/category/Holidays/0">Holidays</a></span>
             </form>
           </ul>
         </div>
         </div>
 
-        <a class="nav-text col-sm-2 weak-link" href="/weakQuestions">WEAK QUESTIONS</a>
+        <a class="nav-text col-sm-2 weak-link" href="/weakQuestions">SAVED QUESTIONS</a>
         <a class="nav-text col-sm-2" href="/practicetest">PRACTICE TEST</a>
         <a class="nav-text col-sm-2 checklist-link" href="/checklist">MY CHECKLIST</a>
 
@@ -79,7 +84,7 @@
   </section>
 
   <footer class="container">
-    <div class="row"></div>
+    <div class="col-sm-12">Made with 🇺🇸 at Ironhack </div>
   </footer>
 
   <script

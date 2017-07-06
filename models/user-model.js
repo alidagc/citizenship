@@ -11,6 +11,7 @@ const UserSchema = new Schema ({
   apptDate: {type: Date},
   weakQuestions: [Schema.Types.ObjectId],
   checklist: {type:[String]},
+  practiceTest: {type: Array },
   encryptedPassword:{type: String},
   //GOOGLE users---------------------
   googleId: {type: String},

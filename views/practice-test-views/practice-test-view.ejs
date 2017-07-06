@@ -1,26 +1,33 @@
+<div class="row centered">
+  <form action="/practicetest/regenerate" method="post">
+    <button type="submit" class="bttn-unite bttn-md bttn-danger">Create a new test!</button>
+  </form>
+</div>
   <div class="row">
     <div class="col-sm-12">
-      <% practiceQuestions.forEach((oneQ)=>{ %>
+      <% practiceQuestions.forEach((oneQ, index)=>{ %>
         <div class="row">
           <div class="col-sm-9">
             <h3>QUESTION: </h3>
             <p><%=oneQ.question%></p>
           </div>
           <div class="col-sm-3 centered">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">See Answer</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-<%=index%>">See Answer</button>
           </div>
         </div>
-        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-          <div class="modal-dialog modal-sm" role="document">
+        <div class="modal fade" id="modal-<%=index%>" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+          <div class="modal-dialog modal-md" role="document">
             <div class="modal-content">
               <div class="row">
                 <p>Answer/s: </p>
                 <% oneQ.answers.forEach((oneAns)=>{ %>
                   <p>☆ <%=oneAns%></p>
                 <%})%>
-                <form class="centered"  action="/practicetest/addweak/<%=oneQ._id%>" method="post">
-                    <input type="hidden" name="failure" value="incorrect">
-                  <button type="submit" class="bttn-unite bttn-xs bttn-danger">wrong</button>
+                <div class="col-sm-6 centered">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+                <form class="col-sm-6 centered"  action="/practicetest/addweak/<%=oneQ._id%>" method="post">
+                  <button type="submit" class="bttn-unite bttn-xs bttn-danger">Add to my study list</button>
                 </form>
               </div>
             </div>
@@ -29,3 +36,7 @@
       <% }) %>
     </div>
   </div>
+
+<div class="row">
+
+</div>
