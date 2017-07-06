@@ -8,6 +8,7 @@ const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 const session      = require('express-session');
 const passport     = require('passport');
+const random       = require('mongoose-simple-random');
 
 //Importing the "dotenv" package and load variables from the ".env" file.
 // must be in the top, before we try to use the variables.
@@ -63,6 +64,9 @@ app.use('/', myAuthRoutes);
 
 const myChecklistRoutes = require('./routes/checklist-router.js');
 app.use('/', myChecklistRoutes);
+
+const myPracticeRoutes = require('./routes/practicetest-router.js');
+app.use('/', myPracticeRoutes);
 
 //END ROUTES ------------------------------------------------------
 // catch 404 and forward to error handler

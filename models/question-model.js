@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const random   = require('mongoose-simple-random');
 const Schema = mongoose.Schema;
 
 const myQuestionSchema = new Schema ({
@@ -11,7 +12,7 @@ const myQuestionSchema = new Schema ({
     timeSensitive: {type: Boolean}
   });
 
-
+myQuestionSchema.plugin(random);
 const QuestionModel = mongoose.model ('Question', myQuestionSchema);
 
 module.exports = QuestionModel;

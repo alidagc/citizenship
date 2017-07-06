@@ -53,10 +53,13 @@ router.get('/checklist/edit/:itemIndex',(req, res, next) => {
 // TO EDIT A CHECKLIST POST =============================
 router.post('/checklist/update/:itemIndex',(req, res, next) => {
   const currentIndex = Number(req.params.itemIndex);
-  req.user.checklist[currentIndex] = req.body.editTextForChecklist;
+
+  const oldChecklist = req.user.checklist;
+  const newChecklist = oldChecklist;
+  newChecklist[currentIndex] = req.body.editTextForChecklist;
 
   UserModel.findByIdAndUpdate(req.user._id,
-    {$set: {checklist.currentIndex:req.body.editTextForChecklist }},
+    {$set: {checklist:newChecklist}},
      (err) => {
       if (err) {
         next(err);

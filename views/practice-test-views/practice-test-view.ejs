@@ -1,0 +1,31 @@
+  <div class="row">
+    <div class="col-sm-12">
+      <% practiceQuestions.forEach((oneQ)=>{ %>
+        <div class="row">
+          <div class="col-sm-9">
+            <h3>QUESTION: </h3>
+            <p><%=oneQ.question%></p>
+          </div>
+          <div class="col-sm-3 centered">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">See Answer</button>
+          </div>
+        </div>
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+              <div class="row">
+                <p>Answer/s: </p>
+                <% oneQ.answers.forEach((oneAns)=>{ %>
+                  <p>☆ <%=oneAns%></p>
+                <%})%>
+                <form class="centered"  action="/practicetest/addweak/<%=oneQ._id%>" method="post">
+                    <input type="hidden" name="failure" value="incorrect">
+                  <button type="submit" class="bttn-unite bttn-xs bttn-danger">wrong</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
