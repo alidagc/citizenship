@@ -1,38 +1,37 @@
 <div class="row">
-  <div class="col-sm-1"></div>
-  <div class="col-sm-10">
-    <div id="question" class="row">
-      <p>CATEGORY: <%= oneQ.category %></p>
-      <p>SUBCATEGORY: <%= oneQ.subcategory %></p>
-      <h3>QUESTION:  <%=oneQ.question%></h3>
+  <div class="col-sm-12">
+    <div class="question-group" class="row">
+      <h3 class="category-header">CATEGORY:</h3><p><%= oneQ.category %></p>
+      <br>
+      <h3 class="category-header">SUBCATEGORY:</h3><p><%= oneQ.subcategory %></p>
+      <h3 class="question centered">Q: <%=oneQ.question%></h3>
     </div>
 
-    <div id="answers-list" class="row">
-      <p>Answer/s: </p>
+    <div id="answers-list">
+      <p class="answer-header">ANSWERS: </p>
       <% oneQ.answers.forEach((oneAns)=>{ %>
-        <li><%=oneAns%></li>
+        <p class="an-answer">☆ <%=oneAns%></p>
       <%})%>
     </div>
 
     <div id="show-answer" class="row centered">
-      <button class="show-answer bttn-unite bttn-lg bttn-primary">Show Answer</button>
+      <button class="show-answer bttn-unite bttn-lg bttn-primary">SHOW ANSWER</button>
     </div>
 
     <div id="right-wrong-buttons" class="row">
       <form class="col-sm-4 centered" action="/question/category/<%=subcategory%>/<%=(counter - 2) %>" method="post">
-        <button class="bttn-unite bttn-md bttn-success">< Back</button>
-      </form>
-
-      <form class="col-sm-4 centered" action="/question/category/<%= subcategory %>/<%=counter%>" method="post">
-        <button class="bttn-unite bttn-md bttn-success">I got it right!</button>
+        <button>< BACK</button>
       </form>
 
       <form class="col-sm-4 centered"  action="/question/category/<%= subcategory %>/<%=counter%>" method="post">
           <input type="hidden" name="failure" value="incorrect">
-        <button type="submit" class="bttn-unite bttn-md bttn-danger">I got it wrong</button>
+        <button>I GOT IT WRONG</button>
+      </form>
+
+      <form class="col-sm-4 centered" action="/question/category/<%= subcategory %>/<%=counter%>" method="post">
+        <button>I GOT IT RIGHT > </button>
       </form>
     </div>
 
   </div>
-  <div class="col-sm-1"></div>
 </div>

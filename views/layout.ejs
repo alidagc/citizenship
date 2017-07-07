@@ -4,20 +4,19 @@
     <meta charset="utf-8">
     <title><%= title %></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,700|Source+Sans+Pro:300,700" rel="stylesheet">
-    <%# <link rel="stylesheet" href="/stylesheets/bttn.min.css">%>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400,600" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/styles.min.css">
   </head>
 
   <body class="container-fluid">
     <header class="row">
 
-      <nav>
-        <div id="logo" class="col-sm-1">
-          <a class="nav-text index-link" href="/">★★★<br>★★★<br>★★★</a>
+      <nav class="flex-box-row-between">
+        <div class="col-sm-1">
+          <a id="logo" class="index-link nav-text" href="/">★★★</a>
         </div>
 
-        <div class="col-sm-2">
+        <div class="col-sm-2 nav-text">
           <div role="presentation" class="dropdown">
             <div class="nav-text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               STUDY <span class="nav-text caret"></span>
@@ -68,12 +67,12 @@
         <a class="nav-text col-sm-2" href="/practicetest">PRACTICE TEST</a>
         <a class="nav-text col-sm-2 checklist-link" href="/checklist">MY CHECKLIST</a>
 
-        <div class="col-sm-2">
+        <div id="auth-nav" class="col-sm-2">
           <% if (typeof currentUser === 'object') { %>
-            <a class="nav-text" href="/logout">Log Out</a>
+            <a id="logout" href="/logout"><button>LOG OUT</button></a>
           <% } else { %>
-            <a class="nav-text" href="/signup">Sign Up</a>
-            <a class="nav-text" href="/login">Log In</a>
+            <a id="signup" href="/signup"><button>SIGN UP</button></a>
+            <a id="login" href="/login"><button>LOG IN</button></a>
           <% } %>
         </div>
 
@@ -81,13 +80,15 @@
     </header>
 
     <section id="cotent-wrapper" class="row">
-        <div id="ejs-wrapper" class="col-sm-12 container ">
+      <div class="col-sm-2"></div>
+        <div id="ejs-wrapper" class="col-sm-8 container ">
           <%- body %>
         </div>
+        <div class="col-sm-2"></div>
     </section>
 
     <footer class="row" >
-      <p>Made with 🇺🇸 at Ironhack </p>
+      <p>Made with 🇺🇸 at Ironhack</p>
     </footer>
 
     <script

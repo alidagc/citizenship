@@ -1,36 +1,118 @@
 
 @import "variables";
 
-
-
+//LAYOUT -----------------------------
 
 nav {
-  margin: 20px 0;
+  padding: 10px 0 10px 10px;
+  border-bottom: 1px solid $light-grey;
   .dropdown-menu {
     background-color: #567fa0;
   }
   .nav-text {
     font-weight: 700;
-    letter-spacing: 3px;
-    color: white;
+    letter-spacing: 4px;
+    color: $light-grey;
     opacity: 0.5;
     text-align: center;
-    text-decoration: none;
     padding: 1%;
   }
   .nav-text:hover {
     color: white;
     opacity: 1;
-    text-decoration: none;
+    background-color: $red;
   }
   .index-link {
     text-align: left;
   }
-  #logo a {
-    font-size: .6em;
+  .caret {
+    font-size: .3em;
+  }
+  #logo {
+    opacity: 1;
+    &:hover{
+      color: $red;
+    }
+  }
+  #auth-nav {
+    button {
+      font-size: .8em;
+      padding: .7em 1em;
+      color: $light-grey;
+      opacity: 0.6;
+      border: 1px solid $light-grey;
+      &:hover{
+        opacity: 1;
+      }
+    }
   }
 }
 
+footer {
+  width:110%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: $navy;
+  font-size: .7em;
+  margin: 0;
+  padding: 0;
+  p{
+    margin: 0;
+    padding: 3px 3px 3px 30px;
+  }
+}
+
+#cotent-wrapper{
+  padding: 20px 0;
+}
+
+// HOME PAGE --------------------------
+#home-page-landing {
+  background-color: $red;
+  padding: 12% 0%;
+  margin: 3% 0;
+}
+#home-page-features {
+  margin: 5%;
+}
+#home-page-features-text{
+  p{
+  text-align: justify;
+  }
+}
+
+// STUDY PAGES----------------------
+
+.question-group{
+  p {
+    display: inline-block;
+  }
+  .question{
+    font-size: 3em;
+    margin-bottom: 5%;
+    padding: 0 10%;
+  }
+  .category-header{
+    display: inline-block;
+    font-size: .85em;
+    padding-right:20px;
+    color: $red;
+    font-weight: 500;
+  }
+}
+
+#answers-list, #weak-question-answers {
+  text-align: center;
+  margin-bottom: 5%;
+  .answer-header {
+    color: $red;
+    font-weight: 500;
+  }
+  .an-answer {
+    font-size: 1.5em;
+  }
+}
 
 #question {
   h3 {margin: 30px 0;}
@@ -40,6 +122,10 @@ nav {
   margin-bottom: 30px;
 }
 
-footer {
-  height: 10%;
+// AUTH POP UP ---------------------
+.for-auth-view {
+  background-color: $red;
+  padding: 12% 0;
 }
+
+// LOG IN / SIGN UP ----------------

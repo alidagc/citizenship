@@ -1,23 +1,27 @@
-<div class="checklist-answers">
-  <div class="row">
-    <p>CATEGORY: <%= theWeakQuestion.category %></p>
-    <p>SUBCATEGORY: <%= theWeakQuestion.subcategory %></p>
-    <h3>QUESTION:  <%=theWeakQuestion.question%></h3>
-  </div>
-
-  <div class="row">
-    <p>Answer/s: </p>
-    <% theWeakQuestion.answers.forEach((oneAns)=>{ %>
-      <p>☆ <%=oneAns%></p>
-    <%})%>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-6">
-      <a href="/weakQuestions">Go back to list</a>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="question-group" class="row">
+      <h3 class="category-header">CATEGORY:</h3><p><%= theWeakQuestion.category %></p>
+      <br>
+      <h3 class="category-header">SUBCATEGORY:</h3><p><%= theWeakQuestion.subcategory %></p>
+      <h3 class="question centered">Q: <%=theWeakQuestion.question%></h3>
     </div>
-    <form class="col-sm-6 centered"  action="/weakQuestions/<%=theWeakQuestion._id%>/remove" method="post">
-      <button class="bttn-unite bttn-md bttn-danger">Remove this question from list</button>
-    </form>
+
+    <div id="weak-question-answers">
+      <p class="answer-header">ANSWERS: </p>
+      <% theWeakQuestion.answers.forEach((oneAns)=>{ %>
+        <p class="an-answer">☆ <%=oneAns%></p>
+      <%})%>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 centered">
+        <a href="/weakQuestions"><button>GO BACK TO LIST</button></a>
+      </div>
+      <form class="col-sm-12 centered"  action="/weakQuestions/<%=theWeakQuestion._id%>/remove" method="post">
+        <button>REMOVE QUESTION FROM MY STUDY LIST</button>
+      </form>
+    </div>
+
   </div>
 </div>

@@ -1,19 +1,37 @@
 
-<% if (typeof currentUser === 'object') { %>
-  <h1>Welcome back, <%=userName%></h1>
-  <button type="button" name="button"><a href="/question/0">Lets get to work!</a></button>
-<% } else { %>
-  <h1>Welcome to My Civics Test</h1>
-  <p>We are here to help you ace the Civics Test portion of your Naturalization Interview</p>
-  <button type="button" name="button"><a href="/question/0">Lets get to work!</a></button>
-<% } %>
+<div class="col-sm-12">
+  <div id="home-page-landing" class="row centered">
+    <% if (typeof currentUser === 'object') { %>
+      <h1>WELCOME BACK, <%=userName%>!</h1>
+    <% } else { %>
+      <h1>WELCOME TO MY CIVICS TEST</h1>
+      <p>We are here to help you ace the Civics Test<br> portion of your Naturalization Interview</p>
+    <% } %>
+    <br>
+    <br>
+    <div class="centered">
+        <button type="button" name="button"><a href="/question/0">LETS GET TO WORK</a></button>
+    </div>
+  </div>
 
-<h2>Member Features:</h2>
-<h3>Study</h3>
-<p>Click on the dropdown menu to study for all 100 questions, or filter by question category</p>
-<h3>Saved Questions</h3>
-<p>Some questions will be harder than others as you go through the study list. When you get an answer wrong, we save that question for you, so you can refer to it after.</p>
-<h3>Practice Test</h3>
-<p>Feeling up to the challenge? Here will you find a randomly generated 10 question test. You can take as many tests as you want!</p>
-<h3>My Checklist</h3>
-<p>Going to your interview is overwhelming! Let us make it easier by helping stay organized. Make a list of items to bring with you to the interview.</p>
+  <h2 id="home-page-features" class="row centered"> F E A T U R E S</h2>
+
+  <div id="home-page-features-text" class="row">
+    <div class="col-sm-3 centered">
+      <h3>Study</h3>
+      <p>Click on the dropdown menu to study for all 100 questions, or filter by question category</p>
+    </div>
+    <div class="col-sm-3 centered">
+      <h3>Saved Questions</h3>
+      <p>Some questions will be harder than others as you go through the study list. When you get an answer wrong, we save that question for you, so you can refer to it after.</p>
+    </div>
+    <div class="col-sm-3 centered">
+      <h3>Practice Test</h3>
+      <p>Feeling up to the challenge? Here will you find a randomly generated 10 question test. You can take as many tests as you want!</p>
+    </div>
+    <div class="col-sm-3 centered">
+      <h3>My Checklist</h3>
+      <p>Going to your interview is overwhelming! Let us make it easier by helping stay organized. Make a list of items to bring with you to the interview.</p>
+    </div>
+  </div>
+</div>
