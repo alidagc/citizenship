@@ -6,7 +6,6 @@ const router  = express.Router();
 
 // FIRST QUESTION VIEW FOR ALL QUESTIONS PAGE ======================================
 router.get('/question/0',(req, res, next) => {
-
   const counter = 0;
 
   QuestionModel.findOne(
@@ -25,7 +24,6 @@ router.get('/question/0',(req, res, next) => {
 
 // FROM BUTTONS ON STUDY PAGE FOR ALL QUESTIONS "RIGHT OR WRONG" =============
 router.post('/question/:counter', (req, res, next) => {
-res.locals.pageName = "study";
   const counter = Number(req.params.counter);
   QuestionModel.find()
     .limit(1)
@@ -50,6 +48,7 @@ res.locals.pageName = "study";
 
               res.locals.oneQ = theActualQuestion;
               res.locals.counter = counter + 1;
+              console.log(counter);
               res.render('questions-views/study-question-view');
             });
       }

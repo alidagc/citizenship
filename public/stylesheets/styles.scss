@@ -7,7 +7,16 @@ nav {
   padding: 10px 0 10px 10px;
   border-bottom: 1px solid $light-grey;
   .dropdown-menu {
-    background-color: #567fa0;
+    border-radius: 1px;
+    width: 150%;
+    background-color: $light-grey;
+    padding: 15px;
+    font-weight: 400;
+    hr {
+      margin: 3% 20%;
+      border-bottom: .3px solid $grey;
+      opacity: .3;
+    }
   }
   .nav-text {
     font-weight: 700;
@@ -22,17 +31,21 @@ nav {
     opacity: 1;
     border-bottom: 2px solid $red;
   }
-  .index-link {
-    text-align: left;
-  }
-  .caret {
-    font-size: .3em;
+
+.all-questions-link {
+  color: $red;
+  &:hover{
+    color: $red;
+    }
   }
   #logo {
     opacity: 1;
     &:hover{
       color: $red;
     }
+  }
+  #logout {
+    margin-left: 20%;
   }
   #auth-nav {
     button {
@@ -77,8 +90,14 @@ footer {
   margin: 5%;
 }
 #home-page-features-text{
-  background-color: $light-grey;
-  color: $dark-grey;
+  padding-left: 11%;
+  .col-sm-5, .col-sm-6 {
+    background-color: $light-grey;
+    color: $dark-grey;
+    padding: 20px;
+    margin: 10px;
+    height: 200px;
+  }
   p{
   text-align: justify;
   font-size: .8em;
