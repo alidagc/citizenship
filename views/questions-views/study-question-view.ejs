@@ -1,13 +1,13 @@
 <div class="row">
-  <div class="col-sm-1"></div>
-  <div class="col-sm-10">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
     <div id="question" class="row">
       <p>CATEGORY: <%= oneQ.category %></p>
       <p>SUBCATEGORY: <%= oneQ.subcategory %></p>
       <h3>QUESTION:  <%=oneQ.question%></h3>
     </div>
 
-    <div id="answers-list" class="row">
+    <div id="answers-list">
       <p>Answer/s: </p>
       <% oneQ.answers.forEach((oneAns)=>{ %>
         <li><%=oneAns%></li>
@@ -19,7 +19,7 @@
     </div>
 
     <div id="right-wrong-buttons" class="row">
-      
+
       <form class="col-sm-4 centered" action="/question/<%=(counter - 2) %>" method="post">
         <button class="bttn-unite bttn-md bttn-success">< Back</button>
       </form>
@@ -30,10 +30,10 @@
 
       <form class="col-sm-4 centered"  action="/question/<%=counter%>" method="post">
           <input type="hidden" name="failure" value="incorrect">
-        <button type="submit" class="bttn-unite bttn-md bttn-danger">I got it wrong</button>
+        <button class="bttn-unite bttn-md bttn-danger">I got it wrong</button>
       </form>
     </div>
 
   </div>
-  <div class="col-sm-1"></div>
+  <div class="col-sm-2"></div>
 </div>

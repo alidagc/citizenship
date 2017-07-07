@@ -1,9 +1,16 @@
-<h1>Welcome to My Civics Test</h1>
-<p>We are here to help you ace the Civics Test portion of your Naturalization Interview!</p>
-<h3>Study</h3>
-<p>Click on the dropdown menu to study for all 100 questions, or filter by question category</p>
+
+<% if (typeof currentUser === 'object') { %>
+  <h1>Welcome back, <%=userName%></h1>
+  <button type="button" name="button"><a href="/question/0">Lets get to work!</a></button>
+<% } else { %>
+  <h1>Welcome to My Civics Test</h1>
+  <p>We are here to help you ace the Civics Test portion of your Naturalization Interview</p>
+  <button type="button" name="button"><a href="/question/0">Lets get to work!</a></button>
+<% } %>
 
 <h2>Member Features:</h2>
+<h3>Study</h3>
+<p>Click on the dropdown menu to study for all 100 questions, or filter by question category</p>
 <h3>Saved Questions</h3>
 <p>Some questions will be harder than others as you go through the study list. When you get an answer wrong, we save that question for you, so you can refer to it after.</p>
 <h3>Practice Test</h3>

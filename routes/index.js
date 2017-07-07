@@ -5,9 +5,13 @@ const router  = express.Router();
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  res.render('index',{
-    pageName: "index"
-  });
+  if (req.user) {
+    res.locals.userName = req.user.firstName;
+    res.render('index');
+  } else {
+    res.render('index');
+  }
+
 });
 
 module.exports = router;

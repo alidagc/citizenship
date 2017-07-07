@@ -8,6 +8,7 @@ const router  = express.Router();
 router.get('/question/0',(req, res, next) => {
 
   const counter = 0;
+  
   QuestionModel.findOne(
       (err, QfromArray) => {
     if (err) {
@@ -18,7 +19,7 @@ router.get('/question/0',(req, res, next) => {
   res.locals.oneQ = QfromArray;
   res.locals.counter = counter + 1;
   res.render('questions-views/study-question-view');
-});
+  });
 });
 
 
