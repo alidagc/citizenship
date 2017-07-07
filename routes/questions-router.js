@@ -11,7 +11,6 @@ router.get('/question/0',(req, res, next) => {
   QuestionModel.findOne(
       (err, QfromArray) => {
     if (err) {
-      // use next() to skip to the ERROR PAGE
       next(err);
       return;
     }
@@ -25,18 +24,18 @@ router.get('/question/0',(req, res, next) => {
 // FROM BUTTONS ON STUDY PAGE FOR ALL QUESTIONS "RIGHT OR WRONG" =============
 router.post('/question/:counter', (req, res, next) => {
   const counter = Number(req.params.counter);
-  QuestionModel.find()
-    .limit(1)
-    .skip(counter)
-    .exec((err, QfromArray) => {
-      if (err) {
-        next(err);
-        return;
-      }
+  const thisQuestionCounter = counter - 1;
 
-      const theActualQuestion = QfromArray[0];
-
-      if (req.body.failure) {
+  if (req.body.failure) {
+    QuestionModel.find()
+      .limit(1)
+      .skip(thisQuestionCounter)
+      .exec((err, QfromArray) => {
+        if (err) {
+          next(err);
+          return;
+        }
+        const theActualQuestion = QfromArray[0];
         UserModel.findByIdAndUpdate(req.user._id, {
              "$push" : {weakQuestions: theActualQuestion._id},
            }, (err, response) => {
@@ -45,18 +44,21 @@ router.post('/question/:counter', (req, res, next) => {
                 next(err);
                 return;
               }
-
-              res.locals.oneQ = theActualQuestion;
-              res.locals.counter = counter + 1;
-              console.log(counter);
-              res.render('questions-views/study-question-view');
             });
+        });
       }
-      else {
-        res.locals.oneQ = theActualQuestion;
-        res.locals.counter = counter + 1;
-        res.render('questions-views/study-question-view');
-      }
+    QuestionModel.find()
+      .limit(1)
+      .skip(counter)
+      .exec((err, QfromArray) => {
+        if (err) {
+          next(err);
+          return;
+        }
+        const theActualQuestion = QfromArray[0];
+    res.locals.oneQ = theActualQuestion;
+    res.locals.counter = counter + 1;
+    res.render('questions-views/study-question-view');
   });
 });
 
@@ -82,43 +84,45 @@ router.get('/question/category/:aCategory/0', (req, res, next) => {
 // FROM BUTTONS ON BY CATEGORY STUDY PAGE "RIGHT OR WRONG" =================
 router.post('/question/category/:aCategory/:counter', (req, res, next) => {
   const counter = Number(req.params.counter);
+  const thisQuestionCounter = counter - 1;
   const theCategory = req.params.aCategory;
 
-  QuestionModel.find({subcategory: req.params.aCategory})
-    .limit(1)
-    .skip(counter)
-    .exec((err, QfromArray) => {
-      if (err) {
-        next(err);
-        return;
-      }
-
-      const theActualQuestion = QfromArray[0];
-
-      if (req.body.failure) {
-        UserModel.findByIdAndUpdate(req.user._id, {
-             "$push" : {weakQuestions: theActualQuestion._id},
-           }, (err, response) => {
-              if (err){
-                console.log("Question not saved to user");
+  if (req.body.failure) {
+          QuestionModel.find({subcategory: req.params.aCategory})
+            .limit(1)
+            .skip(thisQuestionCounter)
+            .exec((err, QfromArray) => {
+              if (err) {
                 next(err);
                 return;
               }
-
-              res.locals.subcategory = req.params.aCategory;
-              res.locals.oneQ = theActualQuestion;
-              res.locals.counter = counter + 1;
-              res.render('questions-views/by-category-view');
-            });
-      }
-      else {
-        res.locals.oneQ = theActualQuestion;
-        res.locals.counter = counter + 1;
-        res.locals.subcategory = req.params.aCategory;
-        res.render('questions-views/by-category-view');
-      }
+              const theActualQuestion = QfromArray[0];
+              UserModel.findByIdAndUpdate(req.user._id, {
+                   "$push" : {weakQuestions: theActualQuestion}, //this might break it
+                 }, (err, response) => {
+                    if (err){
+                      console.log("Question not saved to user");
+                      next(err);
+                      return;
+                    }
+                  });
+              });
+  }
+    QuestionModel.find({subcategory: req.params.aCategory})
+      .limit(1)
+      .skip(counter)
+      .exec((err, QfromArray) => {
+        if (err) {
+          next(err);
+          return;
+        }
+        const theActualQuestion = QfromArray[0];
+    res.locals.oneQ = theActualQuestion;
+    res.locals.counter = counter + 1;
+    res.locals.subcategory = req.params.aCategory;
+    res.render('questions-views/by-category-view');
+    });
   });
-});
 
 // WEAK QUESTIONS VIEW  ================================================
 router.get('/weakQuestions',(req, res, next) => {

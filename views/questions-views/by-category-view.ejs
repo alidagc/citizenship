@@ -23,14 +23,16 @@
         <button>< BACK</button>
       </form>
 
+
+      <form class="col-sm-4 centered" action="/question/category/<%= subcategory %>/<%=counter%>" method="post">
+        <button>I GOT IT RIGHT > </button>
+      </form>
+
       <form class="col-sm-4 centered"  action="/question/category/<%= subcategory %>/<%=counter%>" method="post">
           <input type="hidden" name="failure" value="incorrect">
         <button>I GOT IT WRONG</button>
       </form>
 
-      <form class="col-sm-4 centered" action="/question/category/<%= subcategory %>/<%=counter%>" method="post">
-        <button>I GOT IT RIGHT > </button>
-      </form>
     </div>
 
   </div>
