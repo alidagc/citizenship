@@ -20,7 +20,7 @@ nav {
   .nav-text:hover {
     color: white;
     opacity: 1;
-    background-color: $red;
+    border-bottom: 2px solid $red;
   }
   .index-link {
     text-align: left;
@@ -77,8 +77,11 @@ footer {
   margin: 5%;
 }
 #home-page-features-text{
+  background-color: $light-grey;
+  color: $dark-grey;
   p{
   text-align: justify;
+  font-size: .8em;
   }
 }
 
@@ -129,3 +132,83 @@ footer {
 }
 
 // LOG IN / SIGN UP ----------------
+#sign-up-view, #login-view {
+  background-color: $red;
+  padding: 4% 12%;
+  margin-top: 4%;
+  label {
+    font-weight: 200;
+  }
+  input {
+    width: 100%;
+    color: $dark-grey;
+    font-weight: 400;
+  }
+  .social-logins {
+    button {
+      margin: 20px 0;
+      padding: 10px 22px;
+    }
+  }
+}
+
+#login-up-view {
+  padding: 1% 8%;
+  .col-sm-6 {
+    padding: 0 !important;
+  }
+}
+
+// STUDY LIST ------------------------
+.study-Q-header, .add-checklist-item, .edit-checklist-item, .modal-answer-header {
+  color: $red !important;
+  font-size: 1.1em;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.study-Q-text{
+  font-size: 1.1em;
+}
+
+.smaller-answer-button {
+  font-size: 0.8em;
+}
+
+// CHECK LIST CRUD ----------------
+textarea {
+  width: 80%;
+  background-color: $light-grey;
+  border: 2px solid $red;
+  color: $navy;
+  font-weight: bold;
+  margin: 5% 0;
+}
+
+// ALL CHECKLIST VIEW ------------
+.add-checklist-button, .create-new-test {
+  color: $red;
+  border: 2px solid $red;
+  font-weight: bold;
+  opacity: .7;
+  padding: 10px 50px;
+  margin-bottom: 3%;
+}
+
+// PRACTICE TEST & MODALS --------------
+.modal-answer-header {
+  padding-top: 20px;
+}
+.modal-answer-text {
+  color: $navy;
+  font-weight: 400;
+}
+
+.modal-buttons{
+  color: $dark-grey !important;
+  border: 2px solid $dark-grey !important;
+  font-weight: bold;
+  opacity: .8;
+  padding: 10px 50px;
+  margin-bottom: 15px !important;
+}

@@ -1,21 +1,24 @@
 
-<div class="row centered">
-    <button class="bttn-unite bttn-md bttn-success"><a href="/checklist/add">Add item to my checklist!</a></button>
-</div>
+
+
 <div class="row">
+  <h2 class="centered">MY CHECKLIST</h2>
   <div class="col-sm-12">
     <% checklistArray.forEach((oneListItem, i)=>{ %>
-      <div class="row">
-        <div class="col-sm-8">
-          <p><%=oneListItem%></p>
+      <div class="row flex-box-row-between">
+        <div class="col-sm-7">
+          <p class="study-Q-text inline"><span class="study-Q-header">☆</span> <%=oneListItem%></p>
         </div>
-        <div class="col-sm-4">
-            <button class="bttn-unite bttn-xs bttn-success"><a href="/checklist/edit/<%= i %>">Edit item</a></button>
-            <form class="inline centered" action="/checklist/delete/<%= i %>" method="post">
-                <button class="bttn-unite bttn-xs bttn-success">Remove item</button>
-            </form>
+        <div class="col-sm-5">
+          <a href="/checklist/edit/<%= i %>"><button class="smaller-answer-button">EDIT ITEM</button></a>
+          <form class="inline centered" action="/checklist/delete/<%= i %>" method="post">
+              <button class="smaller-answer-button">REMOVE</button>
+          </form>
         </div>
       </div>
     <% }) %>
+  </div>
+  <div class="row centered">
+      <a href="/checklist/add"><button class="add-checklist-button">ADD ITEM</button></a>
   </div>
 </div>

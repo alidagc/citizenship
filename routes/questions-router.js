@@ -8,7 +8,7 @@ const router  = express.Router();
 router.get('/question/0',(req, res, next) => {
 
   const counter = 0;
-  
+
   QuestionModel.findOne(
       (err, QfromArray) => {
     if (err) {

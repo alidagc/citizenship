@@ -1,22 +1,28 @@
+<div class="row">
+  <h2 class="centered">MY STUDY LIST</h2>
+  <div class="col-sm-12">
+    <% if (wrongArray.length === 0){ %>
+      <div class="centered">
+        <h3>You are killing it! No questions to review.</h3>
+      </div>
+    <% } else { %>
 
-<% if (wrongArray.length === 0){ %>
-  <p>You are killing it! No questions you need to review</p>
-<% } else { %>
-  <div class="row">
-    <div class="col-sm-12">
-      <% wrongArray.forEach((oneQ)=>{ %>
-        <div class="row">
-          <div class="col-sm-9">
-            <h3>QUESTION: </h3>
-            <p><%=oneQ.question%></p>
-          </div>
-          <div class="col-sm-3 centered">
-            <button class="bttn-unite bttn-sm bttn-primary">
-              <a href="/weakQuestions/<%=oneQ._id%>">See answer</a>
-            </button>
-          </div>
+    <% wrongArray.forEach((oneQ)=>{ %>
+      <div class="row flex-box-row-between">
+        <div class="col-sm-9">
+          <p class="study-Q-text inline">
+            <span class="study-Q-header">Q:</span>
+            <%=oneQ.question%>
+          </p>
         </div>
-      <% }) %>
-    </div>
+        <div class="col-sm-3 centered flex-box-row-between">
+            <a href="/weakQuestions/<%=oneQ._id%>">
+              <button class="smaller-answer-button">SEE ANSWER</button>
+            </a>
+        </div>
+      </div>
+    <% }) %>
+
+    <% } %>
   </div>
-<% } %>
+</div>

@@ -1,40 +1,42 @@
 <div class="row centered">
   <form action="/practicetest/regenerate" method="post">
-    <button type="submit" class="bttn-unite bttn-md bttn-danger">Create a new test!</button>
+    <button type="submit" class="create-new-test">CREATE A NEW TEST</button>
   </form>
 </div>
   <div class="row">
     <div class="col-sm-12">
       <% practiceQuestions.forEach((oneQ, index)=>{ %>
         <div class="row">
-          <div class="col-sm-9">
-            <h3>QUESTION: </h3>
-            <p><%=oneQ.question%></p>
+          <div class="col-sm-8">
+            <p class="study-Q-text inline">
+              <span class="study-Q-header">Q:</span>
+              <%=oneQ.question%>
+            </p>
           </div>
-          <div class="col-sm-3 centered">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-<%=index%>">See Answer</button>
+          <div class="col-sm-4 centered">
+            <button data-toggle="modal" data-target="#modal-<%=index%>">SEE ANSWER</button>
           </div>
         </div>
 
         <div class="modal fade" id="modal-<%=index%>" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
           <div class="modal-dialog modal-md" role="document">
             <div class="modal-content">
-              <div class="row">
-                <p>Answer/s: </p>
+              <div class="row centered">
+                <p class="modal-answer-header">ANSWERS: </p>
                 <% oneQ.answers.forEach((oneAns)=>{ %>
-                  <p>☆ <%=oneAns%></p>
+                  <p class="modal-answer-text">☆<%=oneAns%></p>
                 <%})%>
                 <div class="col-sm-6 centered">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button class="modal-buttons" data-dismiss="modal">GOT IT! GO BACK</button>
                 </div>
                 <form class="col-sm-6 centered"  action="/practicetest/addweak/<%=oneQ._id%>" method="post">
-                  <button type="submit" class="bttn-unite bttn-xs bttn-danger">Add to my study list</button>
+                  <button class="modal-buttons" type="submit">ADD TO STUDY LIST</button>
                 </form>
               </div>
             </div>
           </div>
         </div>
-        
+
       <% }) %>
     </div>
   </div>

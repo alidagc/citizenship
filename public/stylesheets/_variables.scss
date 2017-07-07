@@ -35,7 +35,6 @@ $navy: #16203A;
 
 // // / Shared tag styles =======================
 body {
-  // font-family: 'Lato', sans-serif;
   font-family: 'Work Sans', sans-serif;
   font-weight: 200;
   font-size: 15px;
@@ -72,6 +71,9 @@ button {
   color: $light-grey;
   opacity: 0.6;
   transition: 0.25s;
+  &:focus {
+    outline:0;
+  }
   &:hover {
     opacity: 1;
   }

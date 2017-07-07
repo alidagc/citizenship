@@ -4,38 +4,44 @@
   <p class="error-message"><%=errorMessageSignup%></p>
 <% } %>
 
-<div class="col-sm-3"></div>
+<div class="col-sm-2"></div>
 
-<div id="auth-cards" class="col-sm-6">
-  <h2>Sign up</h2>
+<div id="sign-up-view" class="col-sm-8">
+  <h2>SIGN UP</h2>
   <form id="form" action="/signup" method="post">
 
     <label for="firstname-input">First Name</label>
+    <br>
     <input id="firstname-input" type="text" name="userFirstname"
               placeholder="Darth">
     <br>
     <br>
     <label for="lastname-input">Last Name</label>
+    <br>
     <input id="lastname-input" type="text" name="userLastname"
               placeholder="Darth Vader">
     <br>
     <br>
     <label for="state-input">In what state are you taking the test?</label>
+    <br>
     <input id="state-input" type="text" name="userState"
               placeholder="New York">
     <br>
     <br>
     <label for="apptDate-input">When is your interview?</label>
+    <br>
     <input id="apptDate-input" type="date" name="userApptDate"
               placeholder="08/20/2017">
     <br>
     <br>
     <label for="email-input">Email</label>
+    <br>
     <input id="email-input" type="email" name="userEmail"
               placeholder="darthy666@star.wars">
     <br>
     <br>
     <label for="password-input">Password</label>
+    <br>
     <input id="password-input" type="password" name="userPassword"
               placeholder="*********">
     <br>
@@ -47,19 +53,19 @@
     <br>
     <br>
     <div class="centered">
-        <button>Create an account</button>
+        <button>CREATE MY ACCOUNT</button>
     </div>
 
   </form>
 
-  <div class="row socialLogin">
-    <div class="col-sm-6">
-      <a href="/auth/facebook">Sign up with Facebook</a>
+  <div class="row social-logins">
+    <div class="col-sm-6 centered">
+      <a href="/auth/facebook"><button>WITH FACEBOOK</button></a>
     </div>
-    <div class="col-sm-6">
-      <a href="/auth/google">Sign up  with Google</a>
+    <div class="col-sm-6 centered">
+      <a href="/auth/google"><button>WITH GOOGLE</button></a>
     </div>
   </div>
 
 </div>
-<div class="col-sm-3"></div>
+<div class="col-sm-2"></div>
